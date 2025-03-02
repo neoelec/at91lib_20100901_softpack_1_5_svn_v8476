@@ -154,7 +154,7 @@ unsigned char LUN_Write(MSDLun        *lun,
                         unsigned int blockAddress,
                         void         *data,
                         unsigned int length,
-                        TransferCallback   callback,
+                        MediaCallback   callback,
                         void         *argument)
 {
     unsigned int  address;
@@ -181,7 +181,7 @@ unsigned char LUN_Write(MSDLun        *lun,
                            address,
                            data,
                            length * lun->blockSize,
-                           (MediaCallback) callback,
+                           callback,
                            argument);
 
         // Check operation result code
@@ -212,7 +212,7 @@ unsigned char LUN_Read(MSDLun        *lun,
                        unsigned int blockAddress,
                        void         *data,
                        unsigned int length,
-                       TransferCallback   callback,
+                       MediaCallback   callback,
                        void         *argument)
 {
     unsigned int address;
@@ -239,7 +239,7 @@ unsigned char LUN_Read(MSDLun        *lun,
                           address,
                           data,
                           length * lun->blockSize,
-                          (MediaCallback) callback,
+                          callback,
                           argument);
 
         // Check result code

@@ -100,14 +100,14 @@ extern unsigned char LUN_Write(MSDLun *lun,
                                unsigned int blockAddress,
                                void         *data,
                                unsigned int length,
-                               TransferCallback   callback,
+                               MediaCallback   callback,
                                void         *argument);
 
 extern unsigned char LUN_Read(MSDLun        *lun,
                               unsigned int blockAddress,
                               void         *data,
                               unsigned int length,
-                              TransferCallback   callback,
+                              MediaCallback   callback,
                               void         *argument);
 
 #endif //#ifndef MSDLUN_H

@@ -62,8 +62,8 @@ typedef struct _Media Media;
 
 typedef void (*MediaCallback)(void *argument,
                               unsigned char status,
-                              unsigned char transferred,
-                              unsigned char remaining);
+                              unsigned int transferred,
+                              unsigned int remaining);
 
 typedef unsigned char (*Media_write)(Media *media,
                                      unsigned int address,
