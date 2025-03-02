@@ -349,7 +349,7 @@ unsigned char ADC_IsChannelInterruptStatusSet(unsigned int adc_sr,
 {
     unsigned char status;
 
-    if((adc_sr & (1<<channel)) == (1<<channel)) {
+    if((adc_sr & (1U<<channel)) == (1U<<channel)) {
         status = 1;
     }
     else {
