@@ -64,62 +64,62 @@
 /// MMC/SD in SPI mode reports R1 status always, and R2 for SEND_STATUS
 /// R1 is the low order byte; R2 is the next highest byte, when present.
 //-----------------------------------------------------------------------------
-#define R1_SPI_IDLE             (1 << 0)
-#define R1_SPI_ERASE_RESET      (1 << 1)
-#define R1_SPI_ILLEGAL_COMMAND  (1 << 2)
-#define R1_SPI_COM_CRC          (1 << 3)
-#define R1_SPI_ERASE_SEQ        (1 << 4)
-#define R1_SPI_ADDRESS          (1 << 5)
-#define R1_SPI_PARAMETER        (1 << 6)
+#define R1_SPI_IDLE             (1U << 0U)
+#define R1_SPI_ERASE_RESET      (1U << 1U)
+#define R1_SPI_ILLEGAL_COMMAND  (1U << 2U)
+#define R1_SPI_COM_CRC          (1U << 3U)
+#define R1_SPI_ERASE_SEQ        (1U << 4U)
+#define R1_SPI_ADDRESS          (1U << 5U)
+#define R1_SPI_PARAMETER        (1U << 6U)
 // R1 bit 7 is always zero
-#define R2_SPI_CARD_LOCKED      (1 << 0)
-#define R2_SPI_WP_ERASE_SKIP    (1 << 1)
+#define R2_SPI_CARD_LOCKED      (1U << 0U)
+#define R2_SPI_WP_ERASE_SKIP    (1U << 1U)
 #define R2_SPI_LOCK_UNLOCK_FAIL R2_SPI_WP_ERASE_SKIP
-#define R2_SPI_ERROR            (1 << 2)
-#define R2_SPI_CC_ERROR         (1 << 3)
-#define R2_SPI_CARD_ECC_ERROR   (1 << 4)
-#define R2_SPI_WP_VIOLATION     (1 << 5)
-#define R2_SPI_ERASE_PARAM      (1 << 6)
-#define R2_SPI_OUT_OF_RANGE     (1 << 7)
+#define R2_SPI_ERROR            (1U << 2U)
+#define R2_SPI_CC_ERROR         (1U << 3U)
+#define R2_SPI_CARD_ECC_ERROR   (1U << 4U)
+#define R2_SPI_WP_VIOLATION     (1U << 5U)
+#define R2_SPI_ERASE_PARAM      (1U << 6U)
+#define R2_SPI_OUT_OF_RANGE     (1U << 7U)
 #define R2_SPI_CSD_OVERWRITE    R2_SPI_OUT_OF_RANGE
 
 // Status register constants
-#define STATUS_READY_FOR_DATA   (1 << 8)
-#define STATUS_IDLE             (0 << 9)
-#define STATUS_READY            (1 << 9)
-#define STATUS_IDENT            (2 << 9)
-#define STATUS_STBY             (3 << 9)
-#define STATUS_TRAN             (4 << 9)
-#define STATUS_DATA             (5 << 9)
-#define STATUS_RCV              (6 << 9)
-#define STATUS_PRG              (7 << 9)
-#define STATUS_DIS              (8 << 9)
-#define STATUS_STATE          (0xF << 9)
+#define STATUS_READY_FOR_DATA   (1U << 8U)
+#define STATUS_IDLE             (0U << 9U)
+#define STATUS_READY            (1U << 9U)
+#define STATUS_IDENT            (2U << 9U)
+#define STATUS_STBY             (3U << 9U)
+#define STATUS_TRAN             (4U << 9U)
+#define STATUS_DATA             (5U << 9U)
+#define STATUS_RCV              (6U << 9U)
+#define STATUS_PRG              (7U << 9U)
+#define STATUS_DIS              (8U << 9U)
+#define STATUS_STATE          (0xF << 9U)
 
 //-----------------------------------------------------------------------------
 /// OCR Register
 //-----------------------------------------------------------------------------
-#define AT91C_VDD_16_17          (1 << 4)
-#define AT91C_VDD_17_18          (1 << 5)
-#define AT91C_VDD_18_19          (1 << 6)
-#define AT91C_VDD_19_20          (1 << 7)
-#define AT91C_VDD_20_21          (1 << 8)
-#define AT91C_VDD_21_22          (1 << 9)
-#define AT91C_VDD_22_23          (1 << 10)
-#define AT91C_VDD_23_24          (1 << 11)
-#define AT91C_VDD_24_25          (1 << 12)
-#define AT91C_VDD_25_26          (1 << 13)
-#define AT91C_VDD_26_27          (1 << 14)
-#define AT91C_VDD_27_28          (1 << 15)
-#define AT91C_VDD_28_29          (1 << 16)
-#define AT91C_VDD_29_30          (1 << 17)
-#define AT91C_VDD_30_31          (1 << 18)
-#define AT91C_VDD_31_32          (1 << 19)
-#define AT91C_VDD_32_33          (1 << 20)
-#define AT91C_VDD_33_34          (1 << 21)
-#define AT91C_VDD_34_35          (1 << 22)
-#define AT91C_VDD_35_36          (1 << 23)
-#define AT91C_CARD_POWER_UP_BUSY (1 << 31)
+#define AT91C_VDD_16_17          (1U << 4U)
+#define AT91C_VDD_17_18          (1U << 5U)
+#define AT91C_VDD_18_19          (1U << 6U)
+#define AT91C_VDD_19_20          (1U << 7U)
+#define AT91C_VDD_20_21          (1U << 8U)
+#define AT91C_VDD_21_22          (1U << 9U)
+#define AT91C_VDD_22_23          (1U << 10U)
+#define AT91C_VDD_23_24          (1U << 11U)
+#define AT91C_VDD_24_25          (1U << 12U)
+#define AT91C_VDD_25_26          (1U << 13U)
+#define AT91C_VDD_26_27          (1U << 14U)
+#define AT91C_VDD_27_28          (1U << 15U)
+#define AT91C_VDD_28_29          (1U << 16U)
+#define AT91C_VDD_29_30          (1U << 17U)
+#define AT91C_VDD_30_31          (1U << 18U)
+#define AT91C_VDD_31_32          (1U << 19U)
+#define AT91C_VDD_32_33          (1U << 20U)
+#define AT91C_VDD_33_34          (1U << 21U)
+#define AT91C_VDD_34_35          (1U << 22U)
+#define AT91C_VDD_35_36          (1U << 23U)
+#define AT91C_CARD_POWER_UP_BUSY (1U << 31U)
 
 #define AT91C_MMC_HOST_VOLTAGE_RANGE     (AT91C_VDD_27_28 +\
                                           AT91C_VDD_28_29 +\
@@ -127,10 +127,10 @@
                                           AT91C_VDD_30_31 +\
                                           AT91C_VDD_31_32 +\
                                           AT91C_VDD_32_33)
-#define AT91C_CCS    (1 << 30)
+#define AT91C_CCS    (1U << 30U)
 
 // SPI_CMD Register Value
-#define AT91C_POWER_ON_INIT         (0)
+#define AT91C_POWER_ON_INIT         (0U)
 
 //-----------------------------------------------------------------------------
 // Command Classes
@@ -140,95 +140,95 @@
 // Basic Commands (class 0)
 //
 // Cmd0 MCI + SPI
-#define   AT91C_GO_IDLE_STATE_CMD     (0)
+#define   AT91C_GO_IDLE_STATE_CMD     (0U)
 // Cmd1 SPI
-#define   AT91C_MMC_SEND_OP_COND_CMD  (1)
+#define   AT91C_MMC_SEND_OP_COND_CMD  (1U)
 // Cmd2 MCI
-#define   AT91C_ALL_SEND_CID_CMD      (2)
+#define   AT91C_ALL_SEND_CID_CMD      (2U)
 // Cmd3 MCI
-#define   AT91C_SET_RELATIVE_ADDR_CMD (3)
+#define   AT91C_SET_RELATIVE_ADDR_CMD (3U)
 // Cmd4 MCI
-//#define AT91C_SET_DSR_CMD           (4)
+//#define AT91C_SET_DSR_CMD           (4U)
 // cmd7 MCI
-#define   AT91C_SEL_DESEL_CARD_CMD    (7)
+#define   AT91C_SEL_DESEL_CARD_CMD    (7U)
 // Cmd8 MCI + SPI
-#define   AT91C_SEND_IF_COND          (8)
+#define   AT91C_SEND_IF_COND          (8U)
 // Cmd9 MCI + SPI
-#define   AT91C_SEND_CSD_CMD          (9)
+#define   AT91C_SEND_CSD_CMD          (9U)
 // Cmd10 MCI + SPI
-#define   AT91C_SEND_CID_CMD          (10)
+#define   AT91C_SEND_CID_CMD          (10U)
 // Cmd12 MCI + SPI
-#define   AT91C_STOP_TRANSMISSION_CMD (12)
+#define   AT91C_STOP_TRANSMISSION_CMD (12U)
 // Cmd13 MCI + SPI
-#define   AT91C_SEND_STATUS_CMD       (13)
+#define   AT91C_SEND_STATUS_CMD       (13U)
 // Cmd15 MCI
-//#define AT91C_GO_INACTIVE_STATE_CMD (15)
+//#define AT91C_GO_INACTIVE_STATE_CMD (15U)
 // Cmd58 SPI
-#define   AT91C_READ_OCR_CMD          (58)
+#define   AT91C_READ_OCR_CMD          (58U)
 // Cmd59 SPI
-#define   AT91C_CRC_ON_OFF_CMD        (59)
-//#define AT91C_MMC_ALL_SEND_CID_CMD         (2)
-//#define AT91C_MMC_SET_RELATIVE_ADDR_CMD    (3)
-//#define AT91C_MMC_READ_DAT_UNTIL_STOP_CMD (11)
-//#define AT91C_STOP_TRANSMISSION_SYNC_CMD  (12)
+#define   AT91C_CRC_ON_OFF_CMD        (59U)
+//#define AT91C_MMC_ALL_SEND_CID_CMD         (2U)
+//#define AT91C_MMC_SET_RELATIVE_ADDR_CMD    (3U)
+//#define AT91C_MMC_READ_DAT_UNTIL_STOP_CMD (11U)
+//#define AT91C_STOP_TRANSMISSION_SYNC_CMD  (12U)
 
 //*------------------------------------------------
 //* Class 2 commands: Block oriented Read commands
 //*------------------------------------------------
 // Cmd16
-#define AT91C_SET_BLOCKLEN_CMD          (16)
+#define AT91C_SET_BLOCKLEN_CMD          (16U)
 // Cmd17
-#define AT91C_READ_SINGLE_BLOCK_CMD     (17)
+#define AT91C_READ_SINGLE_BLOCK_CMD     (17U)
 // Cmd18
-#define AT91C_READ_MULTIPLE_BLOCK_CMD   (18)
+#define AT91C_READ_MULTIPLE_BLOCK_CMD   (18U)
 
 //*------------------------------------------------
 //* Class 4 commands: Block oriented write commands
 //*------------------------------------------------
 // Cmd24
-#define AT91C_WRITE_BLOCK_CMD           (24)
+#define AT91C_WRITE_BLOCK_CMD           (24U)
 // Cmd25
-#define AT91C_WRITE_MULTIPLE_BLOCK_CMD  (25)
+#define AT91C_WRITE_MULTIPLE_BLOCK_CMD  (25U)
 // Cmd27
-//#define AT91C_PROGRAM_CSD_CMD         (27)
+//#define AT91C_PROGRAM_CSD_CMD         (27U)
 
 //*----------------------------------------
 //* Class 5 commands: Erase commands
 //*----------------------------------------
 // Cmd32
-//#define AT91C_TAG_SECTOR_START_CMD    (32)
+//#define AT91C_TAG_SECTOR_START_CMD    (32U)
 // Cmd33
-//#define AT91C_TAG_SECTOR_END_CMD      (33)
+//#define AT91C_TAG_SECTOR_END_CMD      (33U)
 // Cmd38
-//#define AT91C_ERASE_CMD               (38)
+//#define AT91C_ERASE_CMD               (38U)
 
 //*----------------------------------------
 //* Class 7 commands: Lock commands
 //*----------------------------------------
 // Cmd42
-//#define AT91C_LOCK_UNLOCK             (42)
+//#define AT91C_LOCK_UNLOCK             (42U)
 
 //*-----------------------------------------------
 // Class 8 commands: Application specific commands
 //*-----------------------------------------------
 // Cmd55
-#define AT91C_APP_CMD                   (55)
+#define AT91C_APP_CMD                   (55U)
 // cmd 56
-//#define AT91C_GEN_CMD                 (56)
+//#define AT91C_GEN_CMD                 (56U)
 // ACMD6
-#define AT91C_SDCARD_SET_BUS_WIDTH_CMD            (6)
+#define AT91C_SDCARD_SET_BUS_WIDTH_CMD            (6U)
 // ACMD13
-//#define AT91C_SDCARD_STATUS_CMD                 (13)
+//#define AT91C_SDCARD_STATUS_CMD                 (13U)
 // ACMD22
-//#define AT91C_SDCARD_SEND_NUM_WR_BLOCKS_CMD     (22)
+//#define AT91C_SDCARD_SEND_NUM_WR_BLOCKS_CMD     (22U)
 // ACMD23
-//#define AT91C_SDCARD_SET_WR_BLK_ERASE_COUNT_CMD (23)
+//#define AT91C_SDCARD_SET_WR_BLK_ERASE_COUNT_CMD (23U)
 // ACMD41
-#define AT91C_SDCARD_APP_OP_COND_CMD              (41)
+#define AT91C_SDCARD_APP_OP_COND_CMD              (41U)
 // ACMD42
-//#define AT91C_SDCARD_SET_CLR_CARD_DETECT_CMD    (42)
+//#define AT91C_SDCARD_SET_CLR_CARD_DETECT_CMD    (42U)
 // ACMD51
-#define AT91C_SDCARD_SEND_SCR_CMD                 (51)
+#define AT91C_SDCARD_SEND_SCR_CMD                 (51U)
 
 //------------------------------------------------------------------------------
 //         Local functions
