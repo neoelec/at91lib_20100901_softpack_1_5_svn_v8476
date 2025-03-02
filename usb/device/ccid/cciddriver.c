@@ -852,6 +852,10 @@ static void PCtoRDRIccPowerOn( void )
 /// Power Off Command - Set the ICC in an inactive state
 /// Return the slot status to the host
 //------------------------------------------------------------------------------
+static inline void __PCtoRDRIccPowerOff(unsigned char bStatus)
+{
+}
+
 static void PCtoRDRIccPowerOff( void )
 {
     unsigned char bStatus;
@@ -862,6 +866,7 @@ static void PCtoRDRIccPowerOff( void )
 
     //JCB stub
     bStatus = ICC_BS_PRESENT_NOTACTIVATED;
+    __PCtoRDRIccPowerOff(bStatus);
 
     // Set the slot to an inactive status
     ccidDriver.sCcidMessage.bStatus = 0;
@@ -896,11 +901,8 @@ static void PCtoRDRGetSlotStatus( void )
 static void PCtoRDRXfrBlock( void )
 {
     unsigned char indexMessage = 0;
-    unsigned char i;
 
     //TRACE_DEBUG("PCtoRDRXfrBlock\n\r");
-
-    i = 0;
 
     // Check the block length
     if ( ccidDriver.sCcidCommand.wLength > (configurationDescriptorsFS.ccid.dwMaxCCIDMessageLength-10) ) {
@@ -1051,6 +1053,12 @@ static void PCtoRDRICCClock( void )
 /// This command changes the parameters used to perform the transportation of
 /// APDU messages by the T=0 protocol.
 //------------------------------------------------------------------------------
+static inline void __PCtoRDRtoAPDU(unsigned char bmChanges,
+                                   unsigned char bClassGetResponse,
+                                   unsigned char bClassEnvelope)
+{
+}
+
 static void PCtoRDRtoAPDU( void )
 {
     unsigned char bmChanges;
@@ -1064,6 +1072,7 @@ static void PCtoRDRtoAPDU( void )
         bmChanges = ccidDriver.sCcidCommand.bSpecific_0;
         bClassGetResponse = ccidDriver.sCcidCommand.bSpecific_1;
         bClassEnvelope = ccidDriver.sCcidCommand.bSpecific_2;
+        __PCtoRDRtoAPDU( bmChanges, bClassGetResponse, bClassEnvelope );
 
         ISO7816_toAPDU();
     }
