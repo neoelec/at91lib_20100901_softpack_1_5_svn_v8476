@@ -50,6 +50,8 @@
 #include <usb/common/core/USBEndpointDescriptor.h>
 #include <usb/common/core/USBGenericRequest.h>
 
+#include <stdint.h>
+
 #if defined(BOARD_USB_UDP)
 
 //------------------------------------------------------------------------------
@@ -1068,7 +1070,7 @@ void USBD_RemoteWakeUp(void)
 /// Sets the device address to the given value.
 /// \param address New device address.
 //------------------------------------------------------------------------------
-void USBD_SetAddress(unsigned char address)
+static void __USBD_SetAddress( unsigned char address )
 {
     TRACE_INFO_WP("SetAddr(%d) ", address);
 
@@ -1087,6 +1089,14 @@ void USBD_SetAddress(unsigned char address)
         AT91C_BASE_UDP->UDP_GLBSTATE = AT91C_UDP_FADDEN;
         deviceState = USBD_STATE_ADDRESS;
     }
+}
+
+void USBD_SetAddress(void *pArg,
+                     unsigned char status,
+                     unsigned int transferred,
+                     unsigned int remaining)
+{
+    __USBD_SetAddress((uintptr_t)pArg);
 }
 
 //------------------------------------------------------------------------------

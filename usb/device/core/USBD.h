@@ -173,7 +173,10 @@ extern unsigned char USBD_IsHalted(unsigned char bEndpoint);
 
 extern void USBD_RemoteWakeUp(void);
 
-extern void USBD_SetAddress(unsigned char address);
+extern void USBD_SetAddress(void *pArg,
+                            unsigned char status,
+                            unsigned int transferred,
+                            unsigned int remaining);
 
 extern void USBD_SetConfiguration(unsigned char cfgnum);
 

@@ -42,6 +42,7 @@
 #include <usb/common/core/USBGenericRequest.h>
 #include <usb/common/core/USBFeatureRequest.h>
 
+#include <stdint.h>
 #include <stdio.h>
 
 #ifdef BOARD_USB_UDPHS
@@ -1351,7 +1352,7 @@ void USBD_RemoteWakeUp(void)
 /// Sets the device address
 /// \param address Adress to be set
 //------------------------------------------------------------------------------
-void USBD_SetAddress( unsigned char address )
+static void __USBD_SetAddress( unsigned char address )
 {
     TRACE_DEBUG_WP("SetAddr(%d) ", address);
 
@@ -1367,6 +1368,14 @@ void USBD_SetAddress( unsigned char address )
     else {
         deviceState = USBD_STATE_ADDRESS;
     }
+}
+
+void USBD_SetAddress(void *pArg,
+                     unsigned char status,
+                     unsigned int transferred,
+                     unsigned int remaining)
+{
+    __USBD_SetAddress((uintptr_t)pArg);
 }
 
 //------------------------------------------------------------------------------
