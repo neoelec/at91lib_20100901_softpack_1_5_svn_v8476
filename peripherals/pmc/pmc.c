@@ -101,7 +101,7 @@ void PMC_EnablePeripheral(unsigned int id)
 {
     SANITY_CHECK(id < 32);
 
-    if ((AT91C_BASE_PMC->PMC_PCSR & (1 << id)) == (1 << id)) {
+    if ((AT91C_BASE_PMC->PMC_PCSR & (1U << id)) == (1U << id)) {
 
         TRACE_INFO("PMC_EnablePeripheral: clock of peripheral"
                    " %u is already enabled\n\r",
@@ -123,7 +123,7 @@ void PMC_DisablePeripheral(unsigned int id)
 {
     SANITY_CHECK(id < 32);
 
-    if ((AT91C_BASE_PMC->PMC_PCSR & (1 << id)) != (1 << id)) {
+    if ((AT91C_BASE_PMC->PMC_PCSR & (1U << id)) != (1U << id)) {
 
         TRACE_INFO("PMC_DisablePeripheral: clock of peripheral"
                    " %u is not enabled\n\r",
