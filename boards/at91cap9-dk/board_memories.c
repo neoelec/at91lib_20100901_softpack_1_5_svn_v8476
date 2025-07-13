@@ -68,8 +68,8 @@
 //------------------------------------------------------------------------------
 /*static unsigned char BOARD_GetRemap()
 {
-    volatile unsigned int *remap = (volatile unsigned int *) 0;
-    volatile unsigned int *ram = (volatile unsigned int *) AT91C_IRAM;
+    volatile unsigned int *remap = (volatile unsigned int *) 0x8;
+    volatile unsigned int *ram = (volatile unsigned int *) (AT91C_IRAM + 0x8);
     // Try to write in 0 and see if this affects the RAM
     unsigned int temp = *ram;
     *ram = temp + 1;
